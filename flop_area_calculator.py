@@ -21,10 +21,21 @@ def action(shape):
         print "You have chosen a circle"
         print "I will now ask for some dimensions and units of measure"
         units = raw_input("What is the unit of measure? e.g. cm, m, inches etc... >> ")
-        radius = input("What is the radius of the circle? >> ")
-        area = math.pi * (radius*radius)
-        print "The area of this circle is %i%s squared" % (area, units)
+        radius = input("What is the radius of the circle? If you don't know radius type 0 >> ")
+        if radius > 0:
+            area = math.pi * (radius*radius)
+            print "The area of this circle is %i%s squared" % (area, units)
+        else:
+            diameter = input("Please enter the diameter of the circle >> ")
+            area = (math.pi/4) * (diameter * diameter)
+            print "The area of this circle is %i%s squared" % (area, units)
     elif shape == 3:
-        print "coming soon" 
+        print "You have chosen a Triangle"
+        print "I will now ask for some dimensions and units of measure"
+        units = raw_input("What is the unit of measure? e.g. cm, m, inches etc... >> ")
+        base = input("What is the length of the base of the Triangle? >> ")
+        height = input("What is the height of the triangle? >> ")
+        area = 0.5 * (base * height)
+        print "The area of the Triangle is %i%s squared" % (area, units)
 
 action(user_shape)
